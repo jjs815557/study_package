@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePageState extends StatefulWidget {
   const HomePageState({Key? key}) : super(key: key);
@@ -16,7 +17,18 @@ class _HomePageStateState extends State<HomePageState> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {}, child: const Text("btn")),
+            ElevatedButton(
+                onPressed: () {
+                  Fluttertoast.showToast(
+                      msg: "This is Center Short Toast",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                },
+                child: const Text("btn")),
             const Center(child: Text("hi"))
           ]),
     );
